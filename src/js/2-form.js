@@ -12,7 +12,7 @@ function saveFormData() {
 }
 
 function onFormInput(event) {
-  formData[event.target.name] = event.target.value;
+  formData[event.target.name] = event.target.value.trim();
   saveFormData();
 }
 
@@ -28,7 +28,7 @@ function populateForm() {
 function onFormSubmit(event) {
   event.preventDefault();
 
-  if (formData.email === "" || formData.message === "") {
+  if (formData.email.trim() === "" || formData.message.trim() === "") {
     alert('Fill please all fields');
     return;
   }
